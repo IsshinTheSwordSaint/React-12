@@ -1,0 +1,28 @@
+Zad1
+React rozróżnia zmienne stanowe na podstawie kolejności wywołań hooków podczas renderowania komponentu
+React przypisuje stan do konkretnego wywołania hooka na podstawie jego pozycji
+Jeśli kolejność się zmieni react może przypisać stan do nieodpowiedniego hooka
+
+Zad2
+if (isLoggedIn) { 
+
+ const [userName, setUserName] = useState('Admin'); 
+
+ } 
+
+hooki nie mogą być wywoływane w if
+
+userName jest zadeklarowane w środku if więc poza nim nie jest dostępne
+
+gdy isLoggedIn się zmieni kolejność hooków się zmienia co powoduje błędy i nie działa stan
+
+Zad3
+
+Na poczatku: { count: 0, name: 'John' }
+Po +1: { count: 1, name: 'John' }
+Po zmianie imienia:  { count: 1, name: 'Jane' }
+
+useState(0) - count
+useState('John') - name
+
+Stan do hookow jest przypisywany na podstawie ich kolejności dlatego musi być zawsze taka sama
